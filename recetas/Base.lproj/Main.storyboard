@@ -41,7 +41,7 @@
                                 <connections>
                                     <outlet property="imagenCellReceta" destination="uCi-9m-Qk2" id="Q61-UA-7b9"/>
                                     <outlet property="labelCellReceta" destination="SbT-PC-RLs" id="P05-Vv-idp"/>
-                                    <segue destination="Oqq-gG-BDw" kind="show" id="o4h-Kk-CpN"/>
+                                    <segue destination="Oqq-gG-BDw" kind="show" identifier="segueVerReceta" id="o4h-Kk-CpN"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
