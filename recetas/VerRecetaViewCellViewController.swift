@@ -19,7 +19,9 @@ class VerRecetaViewCellViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imagenRecetaView.image?=(receta?.imagen)!
+        print(receta?.nombre ?? "fallo de segue")
+        
+        imagenRecetaView.image=(receta?.imagen)!
         
         titleRecetaView.title?=(receta?.nombre)!
 

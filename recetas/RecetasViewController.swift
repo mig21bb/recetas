@@ -196,6 +196,7 @@ class RecetasViewController: UITableViewController {
             let destinationViewController=segue.destination as! VerRecetaViewCellViewController
             
             let indexPath=self.tableView.indexPathForSelectedRow
+            
             destinationViewController.receta=recetas[(indexPath?.row)!]
         
         // Get the new view controller using segue.destinationViewController.
