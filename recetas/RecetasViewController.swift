@@ -8,7 +8,13 @@
 
 import UIKit
 
+
 class RecetasViewController: UITableViewController {
+    
+    //Creamos un array de recetas
+    var recetas:[Receta] = []
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +24,67 @@ class RecetasViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        self.recetas.append( Receta(nombre:"Bocata",
+            imagen: #imageLiteral(resourceName: "04"),
+            ingredientes:["pan","jamon"],
+            pasos:["Cortar pan","Abrir pan","Meter jamón"]
+        ))
+        self.recetas.append( Receta(nombre:"Sushi",
+                                    imagen: #imageLiteral(resourceName: "01"),
+                                    ingredientes:["Arroz","Verdura","Pescado"],
+                                    pasos:["Hervir Arroz","Cortar verduras y pesado","Enrollar"]
+        ))
+        self.recetas.append( Receta(nombre:"Rollito",
+                                    imagen: #imageLiteral(resourceName: "05"),
+                                    ingredientes:["Pasta quebrada","Relleno"],
+                                    pasos:["Preparar relleno","Envolver","Freir"]
+        ))
+        self.recetas.append( Receta(nombre:"Estofado",
+                                    imagen: #imageLiteral(resourceName: "02"),
+                                    ingredientes:["Carne ternera","Cebolla"],
+                                    pasos:["Cortar carne y cebolla","Freír carne y cebolla","Cocer a fuego lento"]
+        ))
+        self.recetas.append( Receta(nombre:"Panini",
+                                    imagen: #imageLiteral(resourceName: "03"),
+                                    ingredientes:["pan","Tomate","Queso"],
+                                    pasos:["Cortar pan","Poner tomate y queso","Horno 15 min"]
+        ))
+        self.recetas.append( Receta(nombre:"Panini",
+                                    imagen: #imageLiteral(resourceName: "03"),
+                                    ingredientes:["pan","Tomate","Queso"],
+                                    pasos:["Cortar pan","Poner tomate y queso","Horno 15 min"]
+        ))
+        self.recetas.append( Receta(nombre:"Panini",
+                                    imagen: #imageLiteral(resourceName: "03"),
+                                    ingredientes:["pan","Tomate","Queso"],
+                                    pasos:["Cortar pan","Poner tomate y queso","Horno 15 min"]
+        ))
+        self.recetas.append( Receta(nombre:"Panini",
+                                    imagen: #imageLiteral(resourceName: "03"),
+                                    ingredientes:["pan","Tomate","Queso"],
+                                    pasos:["Cortar pan","Poner tomate y queso","Horno 15 min"]
+        ))
+        self.recetas.append( Receta(nombre:"Pizza",
+                                    imagen: #imageLiteral(resourceName: "03"),
+                                    ingredientes:["pan","Tomate","Queso"],
+                                    pasos:["Cortar pan","Poner tomate y queso","Horno 15 min"]
+        ))
+        self.recetas.append( Receta(nombre:"Calamar bravo",
+                                    imagen: #imageLiteral(resourceName: "03"),
+                                    ingredientes:["pan","Tomate","Queso"],
+                                    pasos:["Cortar pan","Poner tomate y queso","Horno 15 min"]
+        ))
+        self.recetas.append( Receta(nombre:"Panini",
+                                    imagen: #imageLiteral(resourceName: "03"),
+                                    ingredientes:["pan","Tomate","Queso"],
+                                    pasos:["Cortar pan","Poner tomate y queso","Horno 15 min"]
+        ))
+        
+        recetas.sort(by: { (a, b) -> Bool in
+            b.nombre>a.nombre
+        })
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,23 +96,33 @@ class RecetasViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return recetas.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "celdaReceta", for: indexPath) as! recetaViewCell
 
-        // Configure the cell...
-
+        
+        //cell.textLabel?.text=recetas[indexPath.row].nombre
+        
+        cell.imagenCellReceta.image=recetas[indexPath.row].imagen
+        cell.labelCellReceta.text=recetas[indexPath.row].nombre
+        
+        
+        
+        
         return cell
+
+
+        
     }
-    */
+    /**/
 
     /*
     // Override to support conditional editing of the table view.
@@ -67,6 +144,7 @@ class RecetasViewController: UITableViewController {
     }
     */
 
+    
     /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
