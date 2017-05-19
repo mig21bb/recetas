@@ -15,6 +15,7 @@
 		AF4F0BE81ECF4D4500728990 /* RecetasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4F0BE71ECF4D4500728990 /* RecetasViewController.swift */; };
 		AF4F0BEA1ECF4E4D00728990 /* Receta.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4F0BE91ECF4E4D00728990 /* Receta.swift */; };
 		AF4F0BF21ECF5B5C00728990 /* recetaViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4F0BF11ECF5B5C00728990 /* recetaViewCell.swift */; };
+		AF4F0BF41ECF638400728990 /* VerRecetaViewCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4F0BF31ECF638400728990 /* VerRecetaViewCellViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		AF4F0BE71ECF4D4500728990 /* RecetasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecetasViewController.swift; sourceTree = "<group>"; };
 		AF4F0BE91ECF4E4D00728990 /* Receta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Receta.swift; sourceTree = "<group>"; };
 		AF4F0BF11ECF5B5C00728990 /* recetaViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = recetaViewCell.swift; sourceTree = "<group>"; };
+		AF4F0BF31ECF638400728990 /* VerRecetaViewCellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerRecetaViewCellViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				AF4F0BE71ECF4D4500728990 /* RecetasViewController.swift */,
 				AF4F0BE91ECF4E4D00728990 /* Receta.swift */,
 				AF4F0BF11ECF5B5C00728990 /* recetaViewCell.swift */,
+				AF4F0BF31ECF638400728990 /* VerRecetaViewCellViewController.swift */,
 			);
 			path = recetas;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 				AF4F0BD81ECF4BD100728990 /* ViewController.swift in Sources */,
 				AF4F0BF21ECF5B5C00728990 /* recetaViewCell.swift in Sources */,
 				AF4F0BE81ECF4D4500728990 /* RecetasViewController.swift in Sources */,
+				AF4F0BF41ECF638400728990 /* VerRecetaViewCellViewController.swift in Sources */,
 				AF4F0BD61ECF4BD100728990 /* AppDelegate.swift in Sources */,
 				AF4F0BEA1ECF4E4D00728990 /* Receta.swift in Sources */,
 			);

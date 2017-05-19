@@ -116,7 +116,6 @@ class RecetasViewController: UITableViewController {
         
         
         
-        
         return cell
 
 
@@ -132,10 +131,11 @@ class RecetasViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    /*override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            recetas.remove(at: indexPath.row)
             // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
@@ -143,6 +143,32 @@ class RecetasViewController: UITableViewController {
         }    
     }
     */
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        //Compartir
+        let shareAction = UITableViewRowAction(style: .default, title: "Compartir") { (action, indexPath) in
+            
+            let shareDefaultText = "Estoy mirando la receta de \(self.recetas[indexPath.row].nombre) en la App de David Fraj Blesa"
+            
+            let activityController = UIActivityViewController(activityItems: [shareDefaultText, self.recetas[indexPath.row].imagen], applicationActivities: nil)
+            self.present(activityController, animated: true, completion: nil)
+        }
+        
+        shareAction.backgroundColor = UIColor(red: 30.0/255.0, green: 164.0/255.0, blue: 253.0/255.0, alpha: 1.0)
+        
+        //Borrar
+        let deleteAction = UITableViewRowAction(style: .default, title: "Borrar") { (action, indexPath) in
+            self.recetas.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+        
+        deleteAction.backgroundColor = UIColor(red: 202.0/255.0, green: 202.0/255.0, blue: 202.0/255.0, alpha: 1.0)
+        
+        return [shareAction, deleteAction]
+    }
+    
+    
 
     
     /*
@@ -160,14 +186,19 @@ class RecetasViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "verReceta" {
+            let destinationViewController=segue.destination as! VerRecetaViewCellViewController
+            destinationViewController.receta=
+        
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    /**/
 
 }

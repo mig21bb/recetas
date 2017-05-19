@@ -10,7 +10,7 @@ import UIKit
 
 class recetaViewCell: UITableViewCell {
 
-    @IBOutlet weak var imagenCellReceta: UIImageView!    
+    @IBOutlet weak var imagenCellReceta: UIImageView!
     
     @IBOutlet weak var labelCellReceta: UILabel!
     
